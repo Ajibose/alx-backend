@@ -33,6 +33,7 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """Get page in a dataset"""
         assert(type(page) == int)
         assert(type(page_size) == int)
         assert(page > 0)
