@@ -6,6 +6,7 @@ from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
+    """A caching system that inherits from BaseCaching"""
     def put(self, key, item):
         """Add an item in the cache"""
         if not key or not item:
