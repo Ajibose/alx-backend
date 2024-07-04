@@ -9,7 +9,9 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 
 class LRUCache(BaseCaching):
-    """A Least Recently Used Cache system"""
+    """A Least Recently Used Cache system
+    Leverage python's inherent dictionary order
+    """
     def __init__(self):
         """Initialize and set Cache"""
         super().__init__()
