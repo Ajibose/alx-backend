@@ -16,19 +16,12 @@ class LIFOCache(BaseCaching):
         if not key or not item:
             return
 
-        """if key not in self.cache_data:
-            self.cache_data[key] = item
-        else:
+        if key in self.cache_data:
             del self.cache_data[key]
-            self.cache_data[key] = item"""
 
-        if (len(self.cache_data) >= BaseCaching.MAX_ITEMS and
-                key not in self.cache_data):
-            last_key, last_value = self.cache_data.popitem()
-            print(f"DISCARD: {last_key}")
-
-        elif key in self.cache_data:
-            del self.cache_data[key]
+        if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
+             last_key, _ = self.cache_data.popitem()
+             print(f"DISCARD: {last_key}")
 
         self.cache_data[key] = item
 
